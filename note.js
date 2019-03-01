@@ -19,3 +19,9 @@ const newParagraphs = notes.forEach(function (para) {
 const newP = document.createElement('p');
 newP.textContent = 'Hey this is a new paragraph';
 document.querySelector('section').appendChild(newP);
+
+const btn = document.querySelector('button');
+
+btn.addEventListener('click', function(e) {
+    e.target.textContent = 'the button was clicked';
+})
