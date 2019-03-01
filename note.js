@@ -8,8 +8,6 @@ const notes = [{
     title: 'Office modification',
     body: 'Get a new seat'
 }]
-const btn = document.querySelector('button');
-
-btn.addEventListener('click', function(e) {
+document.querySelector('button').addEventListener('click', function(e) {
     e.target.textContent = 'the button was clicked';
 })
