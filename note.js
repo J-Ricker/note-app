@@ -26,4 +26,21 @@ document.querySelector('#filter-by').addEventListener('change', function (e) {
     console.log(e.target.value);
 })
 
-const now = new Date();
+// const now = new Date();
+// const timeStamp = now.getTime();
+
+// const myDate = new Date(timeStamp);
+// console.log(myDate.getFullYear());
+
+
+const dateOne = new Date('March 22nd 1979 12:00:00');
+const dateTwo = new Date();
+
+const timeStampFirst = dateOne.getTime();
+const otherTimeStamp = dateTwo.getTime();
+
+if (timeStampFirst < otherTimeStamp) {
+    console.log(dateOne.toString());
+} else if (otherTimeStamp < timeStampFirst) {
+    console.log(dateTwo.toString());
+}
