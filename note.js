@@ -26,4 +26,4 @@ document.querySelector('#filter-by').addEventListener('change', function (e) {
     console.log(e.target.value);
 })
 
-const note = new Date();
+const now = new Date();
