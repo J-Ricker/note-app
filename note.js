@@ -1,4 +1,4 @@
-const notes = getSavedNotes();
+let notes = getSavedNotes();
 
 const filters = {
     searchText: '',
@@ -14,7 +14,7 @@ document.querySelector('#create-note').addEventListener('click', function(e) {
         body: ''
     })
     savedNotes(notes);
-    location.assign(`/edit.html#${note.id}`);
+    location.assign(`/edit.html#${id}`);
 })
 
 document.querySelector('#note-search').addEventListener('input', function (e) {
@@ -26,21 +26,9 @@ document.querySelector('#filter-by').addEventListener('change', function (e) {
     console.log(e.target.value);
 })
 
-// const now = new Date();
-// const timeStamp = now.getTime();
-
-// const myDate = new Date(timeStamp);
-// console.log(myDate.getFullYear());
-
-
-const dateOne = new Date('March 22nd 1979 12:00:00');
-const dateTwo = new Date();
-
-const timeStampFirst = dateOne.getTime();
-const otherTimeStamp = dateTwo.getTime();
-
-if (timeStampFirst < otherTimeStamp) {
-    console.log(dateOne.toString());
-} else if (otherTimeStamp < timeStampFirst) {
-    console.log(dateTwo.toString());
-}
+window.addEventListener('storage', function (e) {
+    if (e.key === 'notes') {
+        notes = JSON.parse(e.newValue)
+        renderNotes(notes, filters)
+    }
+})
